@@ -1,0 +1,121 @@
+<?php
+
+class DropboxController extends Controller
+{
+	public function actionIndex()
+	{
+		//session_start();
+		$dropbox = Yii::app()->dropbox;
+		$session = Yii::app()->session;
+		//$session = $_SESSION;
+		//yii::D($_SESSION);
+		//die;
+		if (isset($session['dropbox_auth_state'])) {
+			$dropbox_auth_state = $session['dropbox_auth_state'];
+		} elseif(isset($session['dropbox_oauth_tokens'])) {
+			$dropbox_auth_state = 3;
+		} else {
+			$dropbox_auth_state = 1;
+		}
+		switch($dropbox_auth_state) {
+			case 1 :
+				$tokens = $dropbox->getRequestToken();
+				$session['dropbox_auth_state'] = 2;
+				$session['dropbox_oauth_tokens'] = $tokens;
+				$link = $dropbox->getAuthorizeLink('http://yii.loc/store/index.php?r=dropbox/index'); //Show this link to user
+				$this->redirect($link);
+				exit;
+
+			/* In this phase, the user just came back from authorizing
+			and we're going to fetch the real access tokens */
+			case 2 :
+				//echo "Step 3: Acquiring access tokens\n";
+				$dropbox->setToken($session['dropbox_oauth_tokens']);
+				$tokens = $dropbox->getAccessToken();
+				print_r($tokens);
+				$session['dropbox_auth_state'] = 3;
+				$session['dropbox_oauth_tokens'] = $tokens;
+			// There is no break here, intentional
+
+			/* This part gets called if the authentication process
+			already succeeded. We can use our stored tokens and the api 
+			should work. Store these tokens somewhere, like a database */
+			case 3 :
+				//echo "The user is authenticated\n";
+				//echo "You should really save the oauth tokens somewhere, so the first steps will no longer be needed\n";
+				//print_r($session['oauth_tokens']);
+				$dropbox->setToken($session['dropbox_oauth_tokens']);
+				$tokens = $dropbox->getAccessToken(); 
+				break;
+		}
+	}
+	public function actionTest(){
+		
+	}
+	public function actionIndex2()
+	{
+		$app = Yii::app();
+		$session = $app->session;
+		$consumerKey = $app->params['dropBoxApp']['consumerKey'];
+		$consumerSecret = $app->params['dropBoxApp']['consumerSecret'];
+		
+		$oauth = new Dropbox_OAuth_PEAR($consumerKey, $consumerSecret);
+		// There are multiple steps in this workflow, we keep a 'dropbox_auth_state numbephp -r 'echo PHP_INT_MAX;r' here
+		if (isset($session['dropbox_auth_state'])) {
+			$dropbox_auth_state = $session['dropbox_auth_state'];
+		} elseif(isset($session['dropbox_oauth_tokens'])) {
+			$dropbox_auth_state = 3;
+		} else {
+			$dropbox_auth_state = 1;
+		}
+		switch($dropbox_auth_state) {
+			/* In this phase we grab the initial request tokens
+			and redirect the user to the 'authorize' page hosted
+			on dropbox */
+			case 1 :
+				//echo "Step 1: Acquire request tokens\n";
+				$tokens = $oauth->getRequestToken();
+				// Note that if you want the user to automatically redirect back, you can
+				// add the 'callback' argument to getAuthorizeUrl.
+				$session['dropbox_auth_state'] = 2;
+				$session['dropbox_oauth_tokens'] = $tokens;
+				//echo $oauth->getAuthorizeUrl(Yii::app()->getRequest()->getHostInfo().$app->request->requestUri);
+				//exit;
+				$this->redirect($oauth->getAuthorizeUrl(Yii::app()->getRequest()->getHostInfo().$app->request->requestUri));
+				exit;
+
+			/* In this phase, the user just came back from authorizing
+			and we're going to fetch the real access tokens */
+			case 2 :
+				//echo "Step 3: Acquiring access tokens\n";
+				$oauth->setToken($session['dropbox_oauth_tokens']);
+				$tokens = $oauth->getAccessToken();
+				//print_r($tokens);
+				$session['dropbox_auth_state'] = 3;
+				$session['dropbox_oauth_tokens'] = $tokens;
+			// There is no break here, intentional
+
+			/* This part gets called if the authentication process
+			already succeeded. We can use our stored tokens and the api 
+			should work. Store these tokens somewhere, like a database */
+			case 3 :
+				//echo "The user is authenticated\n";
+				//echo "You should really save the oauth tokens somewhere, so the first steps will no longer be needed\n";
+				//print_r($session['oauth_tokens']);
+				$oauth->setToken($session['dropbox_oauth_tokens']);
+				break;
+		}
+		//$tokens = $oauth->getToken('sleepw@ukr.net', 'kcfyrb0620');
+		//$oauth->setToken($tokens);
+		//$oauth->OAuth->setCAPath(dirname(__FILE__).'/ca.crt',dirname(__FILE__).'/ca.crt');
+		//$oauth->OAuth->setSSLChecks(false);
+		$dropbox = new Dropbox_API($oauth);
+		//$dropbox->move('123.jpg','321.jpg');
+		//$h = fopen(dirname(__FILE__).'/upload.txt','r'); // открываем загружаемый файл
+		//$dropbox->putFile('upload123.txt',$h); // загружаем
+		//var_dump($dropbox->getAccountInfo());
+		
+		$this->render('editor');
+	}
+}
+?>

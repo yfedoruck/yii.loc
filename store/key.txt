@@ -1,0 +1,4 @@
+{
+  "key": "g7vq068kl0uurt3",
+  "secret": "6mdo8xcp0n2ffpz"
+}

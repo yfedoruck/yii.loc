@@ -1,0 +1,71 @@
+var Dropbox = {};
+//if (!window.location.origin){ window.location.origin = window.location.protocol+"//"+window.location.host + "/"; }
+Dropbox.upload = function(){
+	var elf = $("#file-uploader").elfinder("instance"); 
+	var thDirPath = '';
+	var thFiles = {};
+	elf.bind( "upload", 
+		function(event){
+			console.log("upload to dropbox"); 
+			var files = {};
+			
+			$.each(event.data.added, function(key, value) {
+				files[value.hash] = thDirPath + '/' + value.name;
+			});
+			//console.log(files); 
+			$.ajax({ type: "GET", 
+					url: window.location.protocol + "//" + window.location.host + "/store/index.php?r=dropbox/upload",
+					data : { file: files },
+					success : function(text)
+					{
+					 response = text;
+					 console.log(response);
+					}
+			});
+		});
+	elf.bind( "open", 
+		function(event){
+			thDirPath =event.data.options.path; //.replace(/Dropbox\/?/,'');
+			//console.log(thDirPath);
+			$.ajax({ type: "GET", 
+					url: window.location.protocol + "//" + window.location.host + "/store/index.php?r=dropbox/info",
+					data : { file: files },
+					success : function(text)
+					{
+					 response = text;
+					 console.log(response);
+					}
+			});
+		});
+		
+	elf.bind( "select", 
+		function(event, el){
+			//console.log("select files"); 
+			//console.log(event.data); 
+			var selected = event.data.selected;
+			if (selected.length) {
+				$.each(event.data.selected, function(key, value) {
+					thFiles[key] = thDirPath + '/' + el.file(value).name;
+				});
+			}
+			//console.log(thFiles); 
+		});
+	elf.bind( "remove", 
+			function(event){
+				console.log("remove from dropbox"); 
+				//console.log(event); 
+				//console.log(thFiles); 
+				if( !event.data.added ){
+					$.ajax({ type: "GET", 
+							url: window.location.protocol + "//" + window.location.host + "/store/index.php?r=dropbox/remove",
+							data : { file: thFiles },
+							success : function(text)
+							{
+								response = text;
+								console.log(response);
+							}
+					});	
+				}
+			});
+	
+}
