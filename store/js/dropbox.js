@@ -39,7 +39,7 @@ Dropbox.upload = function(){
 		
 	elf.bind( "select", 
 		function(event, el){
-			console.log("select files"); 
+			//console.log("select files"); 
 			//console.log(event.data); 
 			var selected = event.data.selected;
 			if (selected.length) {

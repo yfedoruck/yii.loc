@@ -130,12 +130,13 @@ class DropboxController extends Controller
 		}
 
 		foreach( $_REQUEST['file'] as $file ){
-			//var_dump($file);
 			//echo Yii::app()->basePath . "/../" . $file['path']; continue;
-			chmod(Yii::app()->basePath . "/../" . $file['path'], 0777 );
+			//var_dump(Yii::app()->basePath . "/../" .preg_replace('/(\s)/', '\ ', $file['path'])); 
+			   chmod(Yii::app()->basePath . "/../" .preg_replace('/(\s)/', '\ ', $file['path']), 0777 );
+			//return;
 			try{
 				if($file['mime'] !== 'directory'){
-					$this->dropbox->putFile( $this->_prepareFile($file['path']), $file['path'] );
+					$this->dropbox->putFile( $this->_prepareFile($file['path']),  preg_replace('/(\s)/', '\ ', $file['path']) );
 				}else {
 					$this->dropbox->createFolder( $this->_prepareFile($file['path']) );
 				}
@@ -164,6 +165,8 @@ class DropboxController extends Controller
 	}
 
 	protected function _prepareFile($file){
+		$file = preg_replace('/(\s)/', '\ ', $file);
+		echo 'file is = '.$file;
 		return preg_replace('/Dropbox\/?/', '', $file);
 	}
 	
