@@ -3,13 +3,13 @@
 class DropboxController extends Controller
 {
 	public $dropbox;
-	//public $dropboxBasePath;
+	public $dropboxBasePath;
 	
 	public function init(){
 		$app = Yii::app();
 		$consumerKey = $app->params['dropbox']['appKey'];
 		$consumerSecret = $app->params['dropbox']['appSecret'];
-		//$this->dropboxBasePath = Yii::app()->basePath . '/../Dropbox/';
+		$this->dropboxBasePath = Yii::app()->basePath . '/../Dropbox/';
 		//$session = $app->session;
 		//var_dump($consumerKey); die;
 		require 'Dropbox/autoload.php';
@@ -130,15 +130,21 @@ class DropboxController extends Controller
 		}
 
 		foreach( $_REQUEST['file'] as $file ){
-			//echo Yii::app()->basePath . "/../" . $file['path']; continue;
-			//var_dump(Yii::app()->basePath . "/../" .preg_replace('/(\s)/', '\ ', $file['path'])); 
-			   chmod(Yii::app()->basePath . "/../" .preg_replace('/(\s)/', '\ ', $file['path']), 0777 );
-			//return;
+			chmod(Yii::app()->basePath . "/../" .$file['path'], 0775 );
 			try{
 				if($file['mime'] !== 'directory'){
-					$this->dropbox->putFile( $this->_prepareFile($file['path']),  preg_replace('/(\s)/', '\ ', $file['path']) );
+					$this->dropbox->putFile( $this->_prepareFile($file['path']), $file['path'] );
 				}else {
 					$this->dropbox->createFolder( $this->_prepareFile($file['path']) );
+					$paths = $this->_walkdir(Yii::app()->basePath . "/../" .$file['path']);
+					foreach($paths as $path){
+						if( !is_dir($path) ){
+							$path = $this->_cutBaseDxDir($path);
+							try{
+								$this->dropbox->putFile( $path, 'Dropbox/'.$path );
+							}catch(Exception $e){ echo $e->getMessage(); }
+						}
+					}
 				}
 			}catch(Exception $e){ echo $e->getMessage(); }
 		}
@@ -165,11 +171,22 @@ class DropboxController extends Controller
 	}
 
 	protected function _prepareFile($file){
-		$file = preg_replace('/(\s)/', '\ ', $file);
-		echo 'file is = '.$file;
+		//$file = preg_replace('/(\s)/', '\ ', $file);
+		//echo 'file is = '.$file;
 		return preg_replace('/Dropbox\/?/', '', $file);
 	}
 	
+	protected function _walkdir($dir){
+		$objects = new RecursiveIteratorIterator (new RecursiveDirectoryIterator($dir, RecursiveDirectoryIterator::SKIP_DOTS), RecursiveIteratorIterator::CHILD_FIRST);
+		$items = array();
+		foreach ($objects as $name => $object){ 
+			$items[] = $name;
+		}
+		return $items;
+	}
 	
+	protected function _cutBaseDxDir($path){
+		return str_replace($this->dropboxBasePath, '', $path);
+	}
 }
 ?>

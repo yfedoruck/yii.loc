@@ -62,7 +62,6 @@ Dropbox.upload = function(){
 
 	elf.bind( "duplicate", 
 		function(event){
-			console.log("duplicate file"); 
 				console.log("duplicate file"); 
 				console.log(event); 
 				console.log(thSelected); 
@@ -74,7 +73,7 @@ Dropbox.upload = function(){
 				files[key].mime = value.mime;
 			});
 			//console.log(files); 
-			thAjax('upload', { file: files });
+			//thAjax('upload', { file: files });
 		});
 
 	elf.bind( "paste", 
