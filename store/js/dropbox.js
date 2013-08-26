@@ -84,7 +84,9 @@ Dropbox.upload = function(){
 			var files = {};
 			
 			$.each(event.data.added, function(key, value) {
-				files[value.hash] = thDirPath + '/' + value.name;
+				files[key] = {};
+				files[key].path = thDirPath + '/' + value.name;
+				files[key].mime = value.mime;
 			});
 			//console.log(files); 
 			thAjax('upload', { file: files });
