@@ -173,7 +173,8 @@ class DropboxController extends Controller
 	protected function _prepareFile($file){
 		//$file = preg_replace('/(\s)/', '\ ', $file);
 		//echo 'file is = '.$file;
-		return preg_replace('/Dropbox\/?/', '', $file);
+		//var_dump(preg_replace('/^Dropbox\/?/', '', $file));
+		return preg_replace('/^Dropbox\/?/', '', $file);
 	}
 	
 	protected function _walkdir($dir){
