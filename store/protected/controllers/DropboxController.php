@@ -153,7 +153,7 @@ class DropboxController extends Controller
 	public function actionRename(){
 		//if( !$_REQUEST['file']['old'] || !$_REQUEST['file']['renew'] ){ throw new Exception ("There is no files"); }
 		try{
-			$this->dropbox->move( $this->_prepareFile($_REQUEST['file']['old']['path']), $_REQUEST['file']['renew']['path'] );
+			$this->dropbox->move( $this->_prepareFile($_REQUEST['file']['old']['path']), $this->_prepareFile($_REQUEST['file']['renew']['path']) );
 		}catch(Exception $e){ echo $e->getMessage(); }
 	}
 	
