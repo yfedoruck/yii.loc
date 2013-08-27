@@ -42,7 +42,7 @@ $cs = Yii::app()->clientScript->registerScriptFile( Yii::app()->baseUrl . '/js/d
 $cs = Yii::app()->clientScript->registerScript(
 	'elfinder-instance-on-page-load',
 	'$(window).load(function() {
-		  Dropbox.upload()
+		  Dropbox.init()
 	});'
 );
 ?>

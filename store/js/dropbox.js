@@ -1,7 +1,7 @@
-var Dropbox = {};
+Dropbox = {};
 //if (!window.location.origin){ window.location.origin = window.location.protocol+"//"+window.location.host + "/"; }
 
-Dropbox.upload = function(){
+Dropbox.init = function(){
 	var elf = $("#file-uploader").elfinder("instance"); 
 	var thDirPath = '';
 	var thSelected = {};

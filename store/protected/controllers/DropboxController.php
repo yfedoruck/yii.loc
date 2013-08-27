@@ -18,8 +18,9 @@ class DropboxController extends Controller
 		spl_autoload_unregister(array('YiiBase','autoload'));
 		//Yii::registerAutoloader(array('Dropbox_autoload','autoload'));
 		$oauth = new Dropbox_OAuth_PHP($consumerKey, $consumerSecret);
-		spl_autoload_register(array('YiiBase','autoload'));
 		
+		spl_autoload_register(array('YiiBase','autoload'));
+
 		$this->dropbox = new Dropbox_API($oauth);
 
 		// There are multiple steps in this workflow, we keep a 'state number' here
@@ -62,10 +63,12 @@ class DropboxController extends Controller
 			   already succeeded. We can use our stored tokens and the api 
 			   should work. Store these tokens somewhere, like a database */
 			case 3 :
-				echo "The user is authenticated\n";
-				echo "You should really save the oauth tokens somewhere, so the first steps will no longer be needed\n";
+				//echo "The user is authenticated\n";
+				//echo "You should really save the oauth tokens somewhere, so the first steps will no longer be needed\n";
 				//print_r($_SESSION['oauth_tokens']);
-				$oauth->setToken($_SESSION['oauth_tokens']);
+				//$oauth->setToken($_SESSION['oauth_tokens']);
+				$oauth->setToken(array('token' => 'fi5ir7btumigx1in', 'token_secret' => 'idstd7qzmys0b9b'));
+
 				break;
 		}
 		parent::init();
