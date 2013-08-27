@@ -44,7 +44,9 @@ Dropbox.init = function(){
 			var selected = event.data.selected;
 			if (selected.length) {
 				$.each(event.data.selected, function(key, value) {
-					thSelected[key] = thDirPath + '/' + el.file(value).name;
+					try{
+						thSelected[key] = thDirPath + '/' + el.file(value).name;
+					}catch(e){}
 				});
 			}
 			//console.log(thSelected); 
@@ -140,4 +142,5 @@ Dropbox.init = function(){
 			console.log(files); 
 			thAjax('rename', { file: files });
 		});
+		return 'ok';
 }

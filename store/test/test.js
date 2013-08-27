@@ -2,6 +2,7 @@ var assert = require("assert");
 var expect = require('chai').expect;
 require('../js/dropbox.js');
 require('../js/test.js');
+//require('../../yii/framework/web/js/source/jquery.min.js');
 
 //console.log(Dropbox);
 
@@ -25,25 +26,36 @@ describe('Array', function(){
   })
 });
 
+//console.log(Dx.test);
+//describe('Dropbox', function(){
+  //describe('#test())', function(){
+    //it('test', function(){
+		//var obj = Drop.test();
+		//var DxIns = new test();
+		//expect(obj).to.equal('hello');
+    //})
+  //})
+//});
+
 console.log(Dx.test);
 describe('Dropbox', function(){
   describe('#test())', function(){
-    it('test Array push', function(){
-		var obj = Dx.test();
+    it('test', function(){
+		var obj = Dropbox.init();
 		//var DxIns = new test();
-		expect(obj).to.equal('hello');
+		expect(obj).to.equal('ok');
     })
   })
 });
-console.log(theApp.Person);
-describe('Dropbox', function(){
-  describe('#test())', function(){
-    it('test Array push', function(){
-    var Person = theApp.Person();  
-    var personInstance = new Person();  
-    var message = personInstance.sayHelloTo('adomokos');  
-  
-    expect(message).to.equal('Hello, adomokos!'); 
-    })
-  })
-})
+//console.log(theApp.Person);
+//describe('Dropbox', function(){
+  //describe('#test())', function(){
+    //it('test Array push', function(){
+    //var Person = theApp.Person();  
+    //var personInstance = new Person();  
+    //var message = personInstance.sayHelloTo('adomokos');  
+  //
+    //expect(message).to.equal('Hello, adomokos!'); 
+    //})
+  //})
+//})

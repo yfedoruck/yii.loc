@@ -11051,3 +11051,220 @@ Stack trace:
 #6 {main}
 REQUEST_URI=/store/?r=dropbox/index
 ---
+2013/08/27 16:40:37 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 16:40:44 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/index')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/?r=dropbox/index
+---
+2013/08/27 18:11:52 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 18:14:05 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=upload
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 18:14:07 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 18:17:03 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 18:17:24 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/index')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/?r=dropbox/index
+---
+2013/08/27 18:17:27 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/index')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/?r=dropbox/index
+---
+2013/08/27 18:38:54 [error] [php] chmod(): No such file or directory (/home/slava/www/yii.loc/store/protected/controllers/DropboxController.php:136)
+Stack trace:
+#0 /home/slava/www/yii.loc/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/slava/www/yii.loc/yii/framework/web/CController.php(286): DropboxController->runAction()
+#2 /home/slava/www/yii.loc/yii/framework/web/CController.php(265): DropboxController->runActionWithFilters()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(282): DropboxController->run()
+#4 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /home/slava/www/yii.loc/store/index.php(13): CWebApplication->run()
+REQUEST_URI=/store/index.php?r=dropbox/upload&file%5B0%5D%5Bpath%5D=%2Fcde&file%5B0%5D%5Bmime%5D=text%2Fplain
+in /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php (136)
+in /home/slava/www/yii.loc/store/index.php (13)
+2013/08/27 18:39:53 [error] [php] chmod(): No such file or directory (/home/slava/www/yii.loc/store/protected/controllers/DropboxController.php:136)
+Stack trace:
+#0 /home/slava/www/yii.loc/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/slava/www/yii.loc/yii/framework/web/CController.php(286): DropboxController->runAction()
+#2 /home/slava/www/yii.loc/yii/framework/web/CController.php(265): DropboxController->runActionWithFilters()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(282): DropboxController->run()
+#4 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /home/slava/www/yii.loc/store/index.php(13): CWebApplication->run()
+REQUEST_URI=/store/index.php?r=dropbox/upload&file%5B0%5D%5Bpath%5D=%2F123345&file%5B0%5D%5Bmime%5D=text%2Fplain
+in /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php (136)
+in /home/slava/www/yii.loc/store/index.php (13)
+2013/08/27 18:40:52 [error] [php] chmod(): No such file or directory (/home/slava/www/yii.loc/store/protected/controllers/DropboxController.php:136)
+Stack trace:
+#0 /home/slava/www/yii.loc/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#1 /home/slava/www/yii.loc/yii/framework/web/CController.php(286): DropboxController->runAction()
+#2 /home/slava/www/yii.loc/yii/framework/web/CController.php(265): DropboxController->runActionWithFilters()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(282): DropboxController->run()
+#4 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#5 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#6 /home/slava/www/yii.loc/store/index.php(13): CWebApplication->run()
+REQUEST_URI=/store/index.php?r=dropbox/upload&file%5B0%5D%5Bpath%5D=%2Fzxcv&file%5B0%5D%5Bmime%5D=text%2Fplain
+in /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php (136)
+in /home/slava/www/yii.loc/store/index.php (13)
+2013/08/27 18:41:43 [error] [php] fopen(/refef): failed to open stream: No such file or directory (/home/slava/www/yii.loc/store/protected/vendors/Dropbox/API.php:114)
+Stack trace:
+#0 /home/slava/www/yii.loc/yii/framework/web/actions/CInlineAction.php(49): DropboxController->actionUpload()
+#1 /home/slava/www/yii.loc/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /home/slava/www/yii.loc/yii/framework/web/CController.php(286): DropboxController->runAction()
+#3 /home/slava/www/yii.loc/yii/framework/web/CController.php(265): DropboxController->runActionWithFilters()
+#4 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(282): DropboxController->run()
+#5 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /home/slava/www/yii.loc/store/index.php(13): CWebApplication->run()
+REQUEST_URI=/store/index.php?r=dropbox/upload&file%5B0%5D%5Bpath%5D=%2Frefef&file%5B0%5D%5Bmime%5D=text%2Fplain
+in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/API.php (114)
+in /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php (139)
+in /home/slava/www/yii.loc/store/index.php (13)
+2013/08/27 18:42:11 [error] [php] fopen(/zz): failed to open stream: No such file or directory (/home/slava/www/yii.loc/store/protected/vendors/Dropbox/API.php:114)
+Stack trace:
+#0 /home/slava/www/yii.loc/yii/framework/web/actions/CInlineAction.php(49): DropboxController->actionUpload()
+#1 /home/slava/www/yii.loc/yii/framework/web/CController.php(308): CInlineAction->runWithParams()
+#2 /home/slava/www/yii.loc/yii/framework/web/CController.php(286): DropboxController->runAction()
+#3 /home/slava/www/yii.loc/yii/framework/web/CController.php(265): DropboxController->runActionWithFilters()
+#4 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(282): DropboxController->run()
+#5 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController()
+#6 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#7 /home/slava/www/yii.loc/store/index.php(13): CWebApplication->run()
+REQUEST_URI=/store/index.php?r=dropbox/upload&file%5B0%5D%5Bpath%5D=%2Fzz&file%5B0%5D%5Bmime%5D=text%2Fplain
+in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/API.php (114)
+in /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php (139)
+in /home/slava/www/yii.loc/store/index.php (13)
+2013/08/27 20:26:48 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 20:29:38 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox%2Fdocs
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 20:29:42 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox%2Fdocs%2Fok
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 20:29:44 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox%2Fdocs
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
+2013/08/27 20:29:46 [error] [exception.OAuthException] exception 'OAuthException' with message 'Invalid auth/bad request (got a 401, expected HTTP/1.1 20X or a redirect)' in /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php:150
+Stack trace:
+#0 /home/slava/www/yii.loc/store/protected/vendors/Dropbox/OAuth/PHP.php(150): OAuth->getAccessToken('https://api.dro...')
+#1 /home/slava/www/yii.loc/store/protected/controllers/DropboxController.php(56): Dropbox_OAuth_PHP->getAccessToken()
+#2 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(281): DropboxController->init()
+#3 /home/slava/www/yii.loc/yii/framework/web/CWebApplication.php(141): CWebApplication->runController('dropbox/downloa...')
+#4 /home/slava/www/yii.loc/yii/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#5 /home/slava/www/yii.loc/store/index.php(13): CApplication->run()
+#6 {main}
+REQUEST_URI=/store/index.php?r=dropbox/download&dir=Dropbox%2F123
+HTTP_REFERER=http://yii.loc/store/?r=admin/fileUploader
+---
