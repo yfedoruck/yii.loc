@@ -22,7 +22,9 @@ $this->widget("ext.ezzeelfinder.ElFinderWidget", array(
                 'driver'  => "LocalFileSystem",
                 'path' => $filesPath,
                 'URL' => $filesUrl,
-                'tmbPath' => $filesPath . DIRECTORY_SEPARATOR . ".thumbs",
+                'tmbPath' => $filesPath . DIRECTORY_SEPARATOR . ".tmb",		// .tmb is default setting. You can set some other dir name.
+                //'tmbPath' => $filesPath . DIRECTORY_SEPARATOR,			//disable
+                //'tmbDir' => $filesPath . '/_tmbn',
                 'mimeDetect' => "internal",
                 'accessControl' => "access"
             ),
@@ -30,6 +32,9 @@ $this->widget("ext.ezzeelfinder.ElFinderWidget", array(
 				'driver'        => 'LocalFileSystem',   // driver for accessing file system (REQUIRED)
 				'path'          => $filesPathDropbox,         // path to files (REQUIRED)
 				'URL'           => $filesUrlDropbox, // URL to files (REQUIRED)
+				'tmbPath' => $filesPathDropbox . DIRECTORY_SEPARATOR . ".tmb",		// default
+				//'tmbPath' => $filesPathDropbox . DIRECTORY_SEPARATOR,				//disable
+				//'tmbDir' =>  $filesPathDropbox . DIRECTORY_SEPARATOR,
 				'accessControl' => 'access'             // disable and hide dot starting files (OPTIONAL)
 			),
         )
