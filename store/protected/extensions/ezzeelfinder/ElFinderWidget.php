@@ -193,6 +193,19 @@ class ElFinderWidget extends CWidget
 
         // Registering a script to run initialization script when page's DOM will be built
         $initScript = "jQuery(document).ready(function() {
+			elFinder.prototype.i18.en.messages['cmdeditimage'] = 'Edit Image';
+			elFinder.prototype._options.commands.push('editimage');
+			elFinder.prototype.commands.editimage = function() {
+				this.exec = function(hashes) {
+					 console.log('hallo');
+					 //do whatever
+				}
+				this.getstate = function() {
+					//return 0 to enable, -1 to disable icon access
+					return 0;
+				}
+			};
+
             EzzeElFinder.init(\"" . $this->selector . "\", " . $this->jsonClientOptions . ")
         });";
         $initScriptId = "elFinderInit" . preg_replace("/[^0-9]/", "", microtime(false)) . rand();

@@ -13,7 +13,20 @@ $this->widget("ext.ezzeelfinder.ElFinderWidget", array(
     'clientOptions' => array(
         'lang' => "ru",
         'resizable' => false,
-        'wysiwyg' => "ckeditor"
+        'wysiwyg' => "ckeditor",
+        'contextmenu' => array( 'files' => array('getfile', '|','open', 'quicklook', 'editimage', '|', 'download', '|', 'copy', 'cut', 'paste', 'duplicate', '|', 'rm', '|', 'edit', 'rename', 'resize', '|', 'archive', 'extract', '|', 'info') ),
+        'uiOptions' => array(
+			'toolbar' => array(
+				array('back', 'forward'),
+				array('netmount'),
+				array('mkdir', 'mkfile', 'upload'),
+				array('quicklook', 'editimage'),
+				//array('editimage'),
+				//array(),
+				//array(),
+				//array(''),
+			),
+		),
     ),
     'connectorRoute' => "admin/fileUploaderConnector",
     'connectorOptions' => array(
@@ -47,7 +60,19 @@ $cs = Yii::app()->clientScript->registerScriptFile( Yii::app()->baseUrl . '/js/d
 $cs = Yii::app()->clientScript->registerScript(
 	'elfinder-instance-on-page-load',
 	'$(window).load(function() {
-		  Dropbox.init()
+			elFinder.prototype.i18.en.messages["cmdeditimage"] = "Edit Image";
+			elFinder.prototype._options.commands.push("editimage");
+			elFinder.prototype.commands.editimage = function() {
+				this.exec = function(hashes) {
+					 console.log("hallo");
+					 //do whatever
+				}
+				this.getstate = function() {
+					//return 0 to enable, -1 to disable icon access
+					return 0;
+				}
+			}
+		Dropbox.init();
 	});'
 );
 ?>
