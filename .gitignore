@@ -1,2 +1,3 @@
-store/Dropbox/\.tmb/
-store/protected/runtime/
+Dropbox/\.tmb/
+protected/runtime/
+assets/

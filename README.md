@@ -1,4 +1,0 @@
-yii.loc
-=======
-
-vac tests
