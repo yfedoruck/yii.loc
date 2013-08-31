@@ -8,7 +8,7 @@ Dropbox.init = function(){
 	var thRemoved = {};
 	var thAjax = function(action, dt){
 		$.ajax({ type: "GET", 
-				url: window.location.protocol + "//" + window.location.host + "/index.php?r=dropbox/" + action,
+				url: window.location.protocol + "//" + window.location.host + "/dropbox/" + action,
 				data : dt,
 				success : function(text)
 				{

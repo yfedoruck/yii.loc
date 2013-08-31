@@ -1,0 +1,16 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond $1 !^1(index\.php|css|js|img|images|assets|fonts|robots.\txt)
+    #RewriteRule ^(.*)$ index.php/$1 [L]
+    RewriteRule ^(?!index.php/)(.*)$ index.php/$1 [L]
+    php_value post_max_size 100M
+    php_value upload_max_filesize 100M
+</IfModule>
+<FilesMatch "\.(?i:jpg|gif|png)$">
+  #Header set Content-Disposition attachment
+</FilesMatch>
+AddType video/ogg .ogv
+AddType video/mp4 .mp4
+AddType video/webm .webm
